@@ -30,7 +30,6 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
     Route::resource('pet', PetController::class, ['as' => 'admin']);
-    Route::resource('transaksi', TransaksiController::class, ['as' => 'admin']);
     Route::resource('pets', AllpetsController::class, ['as' => 'admin']);
     Route::resource('users', UserController::class, ['as' => 'admin']);
 });

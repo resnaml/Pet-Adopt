@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AllpetsController extends Controller
 {
@@ -14,8 +14,16 @@ class AllpetsController extends Controller
      */
     public function index()
     {
-        $pets = Pet::all();
-        return view('admin.allpets.index', compact('pets'));
+        // Api key
+        $key = 'live_beeIMF9AjD81e2hJ9mdxguVcrVyfVxqZmd5Ixzz71Er2oNNFLEfCwsR3XXsJm12F';
+        // Api
+        $api = 'https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=';
+
+        $pets = Http::get("$api$key");
+
+        return view('admin.allpets.index', [
+            "pets" => json_decode($pets)
+            ]);
     }
 
     /**

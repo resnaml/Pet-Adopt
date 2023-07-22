@@ -17,11 +17,6 @@ class Pet extends Model
         'photo'
     ];
 
-    public function transaksi()
-    {
-        return $this->hasMany(Transaksi::class);
-    }
-
     public function getTotalPet() {
         return Pet::all()->count();
     }
