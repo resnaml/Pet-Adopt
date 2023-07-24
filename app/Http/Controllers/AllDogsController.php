@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class AllpetsController extends Controller
+class AllDogsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,16 +14,14 @@ class AllpetsController extends Controller
      */
     public function index()
     {
-        // Api key
-        $key = 'live_beeIMF9AjD81e2hJ9mdxguVcrVyfVxqZmd5Ixzz71Er2oNNFLEfCwsR3XXsJm12F';
-        // Api
-        $api = 'https://api.thecatapi.com/v1/images/search?limit=25&api_key=';
-
-        $pets = Http::get("$api$key");
-
-        return view('admin.allpets.cats', [
-            "pets" => json_decode($pets)
-            ]);
+            // Api key
+            $key = 'live_beeIMF9AjD81e2hJ9mdxguVcrVyfVxqZmd5Ixzz71Er2oNNFLEfCwsR3XXsJm12F';
+            // Api
+            $api = 'https://api.thedogapi.com/v1/images/search?limit=10&api_key=';
+            $pets = Http::get("$api$key");
+            return view('admin.allpets.dogs', [
+                "pets" => json_decode($pets)
+                ]);
     }
 
     /**

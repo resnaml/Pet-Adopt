@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\AllDogsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetController;
-use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\AllpetsController;
 use App\Http\Controllers\UserController;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 
@@ -32,4 +33,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('pet', PetController::class, ['as' => 'admin']);
     Route::resource('pets', AllpetsController::class, ['as' => 'admin']);
     Route::resource('users', UserController::class, ['as' => 'admin']);
+    Route::resource('dogs', AllDogsController::class, ['as' => 'admin']);
 });

@@ -15,7 +15,7 @@
           <li><a class="nav-link" href="{{ route('admin.pet.index') }}"><i class="fas fa-paw"></i> <span>Pets Data</span></a></li>
           <li><a class="menu-header" href="{{ route('admin.pets.index') }}"><i class="fas fa-paw"></i> <span>All Cats</span></a>
           </li>
-          <li><a class="menu-header" href="html.blank"><i class="fas fa-paw"></i> <span>All Dogs</span></a>
+          <li><a class="menu-header" href="{{ route('admin.dogs.index') }}"><i class="fas fa-paw"></i> <span>All Dogs</span></a>
           </li>
           <li><a class="nav-link" href="{{ route('admin.users.index') }}"><i class="fas fa-users"></i> <span>User Data</span></a></li>  
         </ul>
